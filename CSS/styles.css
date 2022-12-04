@@ -28,7 +28,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -39,12 +40,17 @@ body {
     font-family: 'roboto', 'sans-serif';
     font-size: 16px;
     font-weight: 400;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-/* header styles */
+/*------------------- header styles -------------------*/
+
 .menu-item,
 .addr-item,
-.card-item {
+.card-item,
+.card-list,
+.filters {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -56,24 +62,52 @@ body {
 .logo {
     text-decoration: none;
     display: inline-block;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
- .main-nav {
-    display: flex;
+.header {
     background: #FFFFFF;
+    max-width: 1440px;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     position: sticky;
     top: -1px;
 }
 
- .header {
+.container {
+    max-width: 1152px;
+    padding: 0 12px;;
+    margin: 0 auto;
+}
+
+.main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 24px 156px;
-    width: 1440px;
-    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
+
+/* Logo styles */
+.logo {
+    display: inline-block;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    width: 115px;
+    font-family: 'Raleway', 'sans-serif';
+    font-weight: 800;
+    font-size: 1.125em;
+    line-height: 1.33;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--Dark);
+}
+
+.logo-web {
+    color: var(--primary-brand);
+}
+
+/* --- Main menu styles --- */
 
 .header-nav,
 .main-menu,
@@ -82,6 +116,16 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.menu-item,
+.addr-item {
+    line-height: 1.5;
+}
+
+.menu-item:not(:last-child),
+.addr-item:not(:last-child) {
+    margin-right: 40px;
 }
 
 .header .menu-link {
@@ -108,30 +152,15 @@ body {
     color: var(--primary-brand);
 }
 
-/* Logo styles */
-.logo {    
-    display: inline-block;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    width: 115px;    
-    font-family: 'Raleway', 'sans-serif';
-    font-weight: 800;
-    font-size: 1.125em;
-    line-height: 1.33;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--Dark);
+.main-menu {
+    margin-left: 77px;
 }
 
-.logo-web {
-    color: var(--primary-brand);
+/*------------------- index.html styles -------------------*/
+
+.section + .section {
+    padding: 120px 0;
 }
-
-/*--- index.html styles ---*/
-
-/* .section {} */
 
 .section-title {
     font-weight: 600;
@@ -140,11 +169,15 @@ body {
     color: var(--Dark);
     text-align: center;
     text-transform: capitalize;
+    margin-bottom: 72px;
 }
 
-/* title section styles */
-.main {
+/*------------------- title section styles */
+.main.container {
     background-color: var(--Dark);
+    text-align: center;
+    padding: 190px 0;
+    max-width: 1440px;
 }
 
 .main-title {
@@ -159,12 +192,16 @@ body {
     font-weight: 600;
     font-size: inherit;
     line-height: 1.1875;
-    /* line-height: inherit; */
-    text-align: center;
     letter-spacing: 0.04em;
     color: var(--bgc-white);
     background-color: var(--primary-brand);
     cursor: pointer;
+    margin-top: 40px;
+    min-width: 170px;
+    padding: 16px 0;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+    border: 1px solid transparent;
+    border-radius: 4px
 }
 
 .order-btn:hover,
@@ -177,12 +214,27 @@ body {
     background: var(--order-active);
 } */
 
-/* Our benefits section */
-/* .benefits {} */
+/*------------------- Our benefits section */
 
-/* .card-list {} */
+.benefits.section {
+    padding-bottom: 0;
+}
 
-/* .card-item {} */
+.container.benefits {
+    display: flex;
+}
+
+.card-list {
+    display: flex;
+}
+
+.card-item:not(:last-child) {
+    margin-right: 24px;
+}
+
+.card-item>.title {
+    margin-bottom: 8px;
+}
 
 .title {
     font-weight: 600;
@@ -190,12 +242,11 @@ body {
     color: var(--Dark);
 }
 
-/* .text {} */
+.text {
+    line-height: 1.5;
+}
 
-/* Our gallery section style */
-/* .gallery {} */
-
-/* .card-list {} */
+/*------------------- Our gallery section style */
 
 .card-item {
     background-color: var(--bgc-white);
@@ -203,62 +254,125 @@ body {
 
 /* .card-img {} */
 
-/* Our team section */
-.team {
+/*------------------- Our team section */
+.team.section {
     background: var(--Light);
 }
 
-/* .card-list {} */
+.team .card-item {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
+}
 
 .team .title,
 .team .text {
     text-align: center;
 }
 
-/* Footer section styles */
+.card-content {
+    margin: 32px 0;
+}
+
+/*------------------- Footer section styles */
+
 .footer {
     background-color: var(--Dark);
     color: var(--Accent);
+    text-align: left;    
+}
+
+.footer > .container {
+    padding: 100px 0;
 }
 
 .footer .logo {
     color: var(--Light);
     line-height: 1.17;
+    margin-bottom: 16px;
 }
 
-/* .text {} */
+.footer .text {
+    max-width: 264px;
+    letter-spacing: 0.02em;
+}
 
-/*--- portfolio.html styles ---*/
+/*------------------- portfolio.html styles -------------------*/
+
+.container.protfolio {
+    padding-top: 90px;
+    padding-bottom: 120px;
+}
 
 .filters {
-    list-style: none;
+    display: flex;
+    justify-content: center;
+    list-style: none;  
+    margin-bottom: 72px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filters-list:not(:last-child) {
+    margin-right: 24px;
 }
 
 .filter-button {
     font-family: inherit;
     font-weight: 600;
     font-size: inherit;
-    line-height: inherit;
-    text-align: center;
+    line-height: 1.1875;
     letter-spacing: 0.04em;
     color: var(--primary-brand);
     background-color: var(--Light);
     cursor: pointer;
+    padding: 12px 24px;
+    border: 1px solid var(--Accent);
+    border-radius: 4px;
 }
 
 .filter-button:hover,
-.filter-button:focus {
+.filter-button:focus
+.filter-button:active {
     color: var(--bgc-white);
     background-color: var(--primary-brand);
+    border: 1px solid transparent;
 }
 
-/* .card-list {} */
+.protfolio .card-list {
+    flex-wrap: wrap;
+}
 
-/* .card-item {} */
+.protfolio .card-item {
+    /* border: 0.5px solid #F4F4FD; */
+    width: calc((100%- 48px) / 3);
+    margin-bottom: 24px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.protfolio .card-item:hover,
+.protfolio .card-item:focus {
+    /* border: 0.5px solid #F4F4FD; */
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.protfolio .card-item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.protfolio .card-item:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+}
 
 .card-link {
     text-decoration: none;
     color: inherit;
+}
+
+.protfolio .card-content {
+    padding-left:  20px;
+    padding-right: 20px;
 }
 
 /* .image {} */
