@@ -181,6 +181,7 @@ body {
 }
 
 .main-title {
+    font-weight: 600;
     font-size: 3.5em;
     line-height: 1.07;
     text-align: center;
@@ -196,7 +197,7 @@ body {
     color: var(--bgc-white);
     background-color: var(--primary-brand);
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 48px;
     min-width: 170px;
     padding: 16px 0;
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
