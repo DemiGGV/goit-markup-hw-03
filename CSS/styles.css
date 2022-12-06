@@ -284,10 +284,7 @@ body {
 .footer {
     background-color: var(--Dark);
     color: var(--Accent);
-    text-align: left;    
-}
-
-.footer > .container {
+    text-align: left;
     padding: 100px 0;
 }
 
@@ -304,8 +301,8 @@ body {
 
 /*------------------- portfolio.html styles -------------------*/
 
-.protfolio>.container {
-    padding-top: 90px;
+.protfolio {
+    padding-top: 96px;
     padding-bottom: 120px;
 }
 
